@@ -7,7 +7,9 @@ authors = [
     { name = "Brian P. McCullough", email = "brianpmccullough@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.146.0",
+]
 
 [project.scripts]
 spo-assistants = "spo_assistants:main"
@@ -31,3 +33,6 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.pyright]
 typeCheckingMode = "strict"
+
+[tool.fastapi]
+entrypoint = "spo_assistants.main:app"
