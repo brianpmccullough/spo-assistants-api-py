@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="Site Assistant API")
+from spo_assistants.assistants.router import router as site_assistant_router
+from spo_assistants.health import router as health_router
 
-@app.get("/health")
-def health() -> dict[str, str]:
-    return { "status": "ok....." }
+app = FastAPI(title="Site Assistant API")
+app.include_router(health_router)
+app.include_router(site_assistant_router)
