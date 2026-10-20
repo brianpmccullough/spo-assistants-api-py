@@ -4,6 +4,7 @@ import hmac
 
 from spo_assistants.assistants.models import ChatMessage
 
+
 class ChatIntegrityService:
     def __init__(self, secret: str) -> None:
         self._secret = secret.encode()
