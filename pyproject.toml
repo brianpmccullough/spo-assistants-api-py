@@ -37,3 +37,6 @@ typeCheckingMode = "strict"
 
 [tool.fastapi]
 entrypoint = "spo_assistants.main:app"
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
